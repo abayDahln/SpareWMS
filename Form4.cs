@@ -19,27 +19,7 @@ namespace SpareWMS
             InitializeComponent();
         }
 
-        private void scan_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(tbnumber.Text))
-            {
-                MessageBox.Show("please input the part number");
-                return;
-            }
-
-            var a = new DataClasses1DataContext();
-            var b = a.SpareParts.Where(x => x.PartNumber == tbnumber.Text).FirstOrDefault();
-            if (b == null)
-            {
-                MessageBox.Show("part number is not found");
-                return;
-            }
-            else
-            {
-                isScan(true);
-                loadData(b);
-            }
-        }
+     
 
         private void loadData(SparePart s)
         {
@@ -159,5 +139,26 @@ namespace SpareWMS
             return true;
         }
 
+        private void scan_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbnumber.Text))
+            {
+                MessageBox.Show("please input the part number");
+                return;
+            }
+
+            var a = new DataClasses1DataContext();
+            var b = a.SpareParts.Where(x => x.PartNumber == tbnumber.Text).FirstOrDefault();
+            if (b == null)
+            {
+                MessageBox.Show("part number is not found");
+                return;
+            }
+            else
+            {
+                isScan(true);
+                loadData(b);
+            }
+        }
     }
 }

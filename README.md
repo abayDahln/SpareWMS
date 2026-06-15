@@ -26,8 +26,10 @@
 - [Instalasi](#-instalasi)
 - [Konfigurasi Database](#️-konfigurasi-database)
 - [Cara Menjalankan](#-cara-menjalankan)
+- [UI Wireframes & User Interface](#-ui-wireframes--user-interface)
 - [Struktur Project](#-struktur-project)
 - [Dokumentasi Database](#-dokumentasi-database)
+- [Workflow Aplikasi](#-workflow-aplikasi)
 - [Kontak](#-kontak)
 
 ---
@@ -412,7 +414,113 @@ SpareWMS Database
 
 ---
 
-## 🎯 Workflow Aplikasi
+## � UI Wireframes & User Interface
+
+### 🔐 Login Form
+
+**Fungsi:** Autentikasi pengguna dan validasi kredensial
+- Input username dan password
+- Validasi user terhadap database
+- Routing otomatis berdasarkan role (Supervisor / Operator)
+
+![Login Form](wireframe/loginForm.png)
+
+**Fitur:**
+- Username dan password validation
+- Secure authentication
+- Role-based redirection
+
+---
+
+### 📊 Operator Main Dashboard
+
+**Fungsi:** Interface untuk operator melakukan transaksi inventory masuk dan keluar
+- Menampilkan form Inventory Inbound (barang masuk)
+- Menampilkan form Inventory Outbound (barang keluar)
+- Input data transaksi dengan validasi otomatis
+- Tracking lokasi spare part di Rack/Bin
+
+**Akses Role:** 
+- 👨‍💼 Operator
+
+![Operator Main Form](wireframe/operatorMainForm.png)
+
+**Fitur yang Tersedia:**
+
+#### 📥 Inventory Inbound (Barang Masuk)
+- Scan atau input Part Number
+- Pilih lokasi penyimpanan (Rack/Bin)
+- Input jumlah quantity
+- Validasi kapasitas bin otomatis
+- Catat waktu transaksi
+- Identifikasi operator yang melakukan transaksi
+
+#### 📤 Inventory Outbound (Barang Keluar)
+- Scan atau input Part Number
+- Lihat stok tersedia (FIFO Source Rack)
+- Verifikasi stok sebelum transaksi
+- Input quantity yang akan dikeluarkan
+- Catat waktu dan operator transaksi
+
+---
+
+### 👨‍⚙️ Supervisor Dashboard
+
+**Fungsi:** Dashboard komprehensif untuk monitoring dan manajemen master data
+- Master data management spare parts
+- Analytics dan reporting
+- Monitoring aktivitas warehouse
+- Utilization tracking
+
+**Akses Role:** 
+- 👨‍⚙️ Supervisor
+
+![Supervisor Main Form](wireframe/supervisorMainForm.png)
+
+**Fitur yang Tersedia:**
+
+#### 📋 Master Data Sparepart (Kiri)
+- **Search & Filter** - Cari spare parts berdasarkan kriteria
+- **CRUD Operations** - Create, Read, Update, Delete spare parts
+- **Data Management** - Kelola:
+  - Part Number (UNIQUE)
+  - Part Name
+  - Category (Finished Goods / Raw Materials)
+  - Max Capacity per Rack
+- **Detail View** - Lihat detail spare part yang dipilih
+- **Bulk Operations** - Insert, Update, Delete dalam batch
+
+#### 📈 Weekly Stock Transaction Summary (Atas Kanan)
+- **Grafik Transaksi Mingguan** - Visualisasi IN/OUT transaksi
+- **Time Series Data** - Tracking 7 hari terakhir
+- **Color Legend** - 
+  - 🟩 Inbound (Green) - Barang masuk
+  - 🟥 Outbound (Red) - Barang keluar
+
+#### 📝 Activity Log (Tengah Kanan)
+- **Real-time Transaksi Log** - Daftar semua aktivitas warehouse
+- **Informasi Tertrack:**
+  - Waktu transaksi (Timestamp)
+  - Spare part yang ditransaksikan
+  - Tipe transaksi (IN/OUT)
+  - Jumlah quantity
+  - Operator yang melakukan transaksi
+- **Sortable & Filterable** - Filter berdasarkan tipe, tanggal, operator
+
+#### 📦 Rack Utilization Summary (Bawah Kanan)
+- **Monitoring Kapasitas Rack** - Track penggunaan rack
+- **Metrik yang Ditampilkan:**
+  - Rack Code - Identifikasi rak
+  - Category - Kategori barang di rack
+  - Total Bins - Jumlah bin per rack
+  - Used - Bin yang sudah terisi
+  - Empty - Bin yang masih kosong
+  - Utilization % - Persentase penggunaan kapasitas
+- **Insights** - Identifikasi bottleneck dan optimize space
+
+---
+
+## �🎯 Workflow Aplikasi
 
 ### Login Flow
 ```
