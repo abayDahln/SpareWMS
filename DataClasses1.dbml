@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SpareWMS" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MYBOOKHYPEAMD;Initial Catalog=SpareWMS;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="SpareWMS.Properties.Settings" SettingsPropertyName="SpareWMSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Categories" Member="Categories">
+    <Type Name="Category">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Category_Rack" Member="Racks" ThisKey="Id" OtherKey="CategoryId" Type="Rack" />
+      <Association Name="Category_SparePart" Member="SpareParts" ThisKey="Id" OtherKey="CategoryId" Type="SparePart" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="User_InventoryLog" Member="InventoryLogs" ThisKey="Id" OtherKey="UserId" Type="InventoryLog" />
+      <Association Name="User_SparePart" Member="SpareParts" ThisKey="Id" OtherKey="CreatedByUserId" Type="SparePart" />
+      <Association Name="User_SparePart1" Member="SpareParts1" ThisKey="Id" OtherKey="DeletedByUserId" Type="SparePart" />
+      <Association Name="User_SparePart2" Member="SpareParts2" ThisKey="Id" OtherKey="ModifiedByUserId" Type="SparePart" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InventoryLogs" Member="InventoryLogs">
+    <Type Name="InventoryLog">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BinId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SparePartId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TransactionType" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TransactionDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_InventoryLog" Member="User" ThisKey="UserId" OtherKey="Id" Type="User" IsForeignKey="true" />
+      <Association Name="RackBin_InventoryLog" Member="RackBin" ThisKey="BinId" OtherKey="Id" Type="RackBin" IsForeignKey="true" />
+      <Association Name="SparePart_InventoryLog" Member="SparePart" ThisKey="SparePartId" OtherKey="Id" Type="SparePart" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RackBins" Member="RackBins">
+    <Type Name="RackBin">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RackRowId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BinNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BinCode" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SparePartId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Capacity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedAt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="RackBin_InventoryLog" Member="InventoryLogs" ThisKey="Id" OtherKey="BinId" Type="InventoryLog" />
+      <Association Name="RackRow_RackBin" Member="RackRow" ThisKey="RackRowId" OtherKey="Id" Type="RackRow" IsForeignKey="true" />
+      <Association Name="SparePart_RackBin" Member="SparePart" ThisKey="SparePartId" OtherKey="Id" Type="SparePart" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RackRows" Member="RackRows">
+    <Type Name="RackRow">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RackId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RowNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RowName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="RackRow_RackBin" Member="RackBins" ThisKey="Id" OtherKey="RackRowId" Type="RackBin" />
+      <Association Name="Rack_RackRow" Member="Rack" ThisKey="RackId" OtherKey="Id" Type="Rack" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Racks" Member="Racks">
+    <Type Name="Rack">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RackCode" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="Rack_RackRow" Member="RackRows" ThisKey="Id" OtherKey="RackId" Type="RackRow" />
+      <Association Name="Category_Rack" Member="Category" ThisKey="CategoryId" OtherKey="Id" Type="Category" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SpareParts" Member="SpareParts">
+    <Type Name="SparePart">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PartNumber" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MaxCapacityInRack" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedAt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedByUserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeletedAt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedByUserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SparePart_InventoryLog" Member="InventoryLogs" ThisKey="Id" OtherKey="SparePartId" Type="InventoryLog" />
+      <Association Name="SparePart_RackBin" Member="RackBins" ThisKey="Id" OtherKey="SparePartId" Type="RackBin" />
+      <Association Name="Category_SparePart" Member="Category" ThisKey="CategoryId" OtherKey="Id" Type="Category" IsForeignKey="true" />
+      <Association Name="User_SparePart" Member="User" ThisKey="CreatedByUserId" OtherKey="Id" Type="User" IsForeignKey="true" />
+      <Association Name="User_SparePart1" Member="User1" ThisKey="DeletedByUserId" OtherKey="Id" Type="User" IsForeignKey="true" />
+      <Association Name="User_SparePart2" Member="User2" ThisKey="ModifiedByUserId" OtherKey="Id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

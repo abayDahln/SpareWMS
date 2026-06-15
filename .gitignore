@@ -1,0 +1,34 @@
+## Visual Studio
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+
+## Build results
+[Bb]in/
+[Oo]bj/
+
+## LINQ to SQL
+*.designer.cs
+*.dbml.layout
+
+## History (from Gemini/other tools)
+.history/
+
+## User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Backup files
+*.backup.*
+
+## SQL Server files
+*.mdf
+*.ldf
+
+## OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
