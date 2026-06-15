@@ -12,7 +12,7 @@
 *.designer.cs
 *.dbml.layout
 
-## History (from Gemini/other tools)
+## History (from other tools)
 .history/
 
 ## User-specific files
@@ -32,3 +32,6 @@
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+## Config
+App.config
