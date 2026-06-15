@@ -601,20 +601,45 @@ Operator:
 
 ---
 
-## 👤 Kontak & Support
+## 👤 Kontak
 
 <div align="center">
 
-### 📞 Need Help?
+### 💬 Let's Connect!
 
-- 📧 **Email:** [contact@sparewms.local]
-- 📋 **Documentation:** See README.md
-- 🐛 **Report Issues:** Internal tracking system
+**Abby Dahlan Havizh**
+
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:abby11dahlan@gmail.com)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/abayy_____________/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/abayDahln)
 
 ---
 
-<img src="https://img.icons8.com/fluency/48/000000/data.png"/> **Made with ❤️ for Efficient Warehouse Management** <img src="https://img.icons8.com/fluency/48/000000/data.png"/>
+### 💖 Support This Project
 
-*Simplifying spare part inventory management*
+<table>
+<tr>
+<td align="center">
+⭐ Star this repo
+</td>
+<td align="center">
+🔄 Share with others
+</td>
+<td align="center">
+🐛 Report issues
+</td>
+<td align="center">
+💡 Suggest features
+</td>
+</tr>
+</table>
+
+---
+
+<img src="https://img.icons8.com/fluency/48/000000/code.png"/> **Made with ❤️ by Abby Dahlan Havizh** <img src="https://img.icons8.com/fluency/48/000000/code.png"/>
+
+*Building digital solutions for warehouse management excellence*
+
+⭐ **If this project helps you, please give it a star!** ⭐
 
 </div>
