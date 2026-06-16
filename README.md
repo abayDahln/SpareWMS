@@ -7,44 +7,43 @@
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)](https://www.microsoft.com/en-us/sql-server/)
 [![Windows Forms](https://img.shields.io/badge/Windows%20Forms-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://docs.microsoft.com/en-us/dotnet/desktop/winforms/)
 
-### 🚀 Sistem Manajemen Inventori Spare Part Berbasis Desktop
+Sistem Manajemen Inventori Spare Part Berbasis Desktop
 
 *Aplikasi desktop terintegrasi untuk mengelola spare part di warehouse dengan sistem tracking real-time, transaksi otomatis, dan role-based access control*
 
-[📖 Dokumentasi](#-dokumentasi) • [🔧 Instalasi](#-instalasi) • [🎯 Fitur](#-fitur-utama) • [📁 Struktur](#-struktur-project)
+[Dokumentasi](#dokumentasi) • [Instalasi](#instalasi) • [Fitur](#fitur-utama) • [Struktur](#struktur-project)
 
 </div>
 
 ---
 
-## 📋 Daftar Isi
+## Daftar Isi
 
-- [Tentang Project](#-tentang-project)
-- [Fitur Utama](#-fitur-utama)
-- [Teknologi yang Digunakan](#️-teknologi-yang-digunakan)
-- [Prasyarat](#-prasyarat)
-- [Instalasi](#-instalasi)
-- [Konfigurasi Database](#️-konfigurasi-database)
-- [Cara Menjalankan](#-cara-menjalankan)
-- [UI Wireframes & User Interface](#-ui-wireframes--user-interface)
-- [Struktur Project](#-struktur-project)
-- [Dokumentasi Database](#-dokumentasi-database)
-- [Workflow Aplikasi](#-workflow-aplikasi)
-- [Kontak](#-kontak)
+- [Tentang Project](#tentang-project)
+- [Fitur Utama](#fitur-utama)
+- [Teknologi yang Digunakan](#teknologi-yang-digunakan)
+- [Prasyarat](#prasyarat)
+- [Instalasi](#instalasi)
+- [Konfigurasi Database](#konfigurasi-database)
+- [Cara Menjalankan](#cara-menjalankan)
+- [Struktur Project](#struktur-project)
+- [Dokumentasi Database](#dokumentasi-database)
+- [Workflow Aplikasi](#workflow-aplikasi)
+- [Kontak](#kontak)
 
 ---
 
-## 🚀 Tentang Project
+## Tentang Project
 
 **SpareWMS** adalah aplikasi desktop yang dibangun untuk mengelola inventori spare part di warehouse dengan sistem yang terorganisir dan efisien. Aplikasi ini memudahkan pengguna dalam melakukan tracking spare part across different racks dan bins, mengelola transaksi masuk-keluar (IN/OUT), serta memelihara kontrol akses berbasis role.
 
-### 🎯 Latar Belakang
+### Latar Belakang
 
 Project ini dikembangkan untuk mengatasi kebutuhan warehouse management yang lebih terstruktur dengan kemampuan tracking real-time, audit trail transaksi, dan sistem keamanan role-based. Dengan menggunakan teknologi .NET Framework dan SQL Server, aplikasi ini menyediakan solusi yang robust dan dapat diandalkan.
 
-### 👥 Target Pengguna
+### Target Pengguna
 
-| 👨‍⚙️ Supervisor | 👨‍💼 Operator |
+| Supervisor | Operator |
 |:---:|:---:|
 | Kelola master data | View & manage inventory |
 | Monitoring transaksi | Input transaksi IN/OUT |
@@ -53,38 +52,38 @@ Project ini dikembangkan untuk mengatasi kebutuhan warehouse management yang leb
 
 ---
 
-## ✨ Fitur Utama
+## Fitur Utama
 
-### 🔐 Sistem Keamanan & Autentikasi
-- 🔑 **Login berbasis Role** - Supervisor dan Operator
-- 🛡️ **Role-based Access Control** - Kontrol akses berbasis peran
-- 👤 **User Management** - Kelola pengguna dan role
+### Sistem Keamanan & Autentikasi
+- **Login berbasis Role** - Supervisor dan Operator
+- **Role-based Access Control** - Kontrol akses berbasis peran
+- **User Management** - Kelola pengguna dan role
 
-### 📦 Manajemen Spare Part
-- 📋 **CRUD Spare Part** - Tambah, edit, hapus spare part
-- 🏷️ **Kategori Spare Part** - Organisasi berdasarkan kategori (Finished Goods, Raw Materials)
-- 📊 **Master Data Management** - Kelola data dasar warehouse
+### Manajemen Spare Part
+- **CRUD Spare Part** - Tambah, edit, hapus spare part
+- **Kategori Spare Part** - Organisasi berdasarkan kategori (Finished Goods, Raw Materials)
+- **Master Data Management** - Kelola data dasar warehouse
 
-### 📍 Warehouse Organization
-- 🎯 **Racks Management** - Kelola rak penyimpanan
-- 📐 **Rows & Bins Configuration** - Setup baris dan bin per rack
-- 🔍 **Location Tracking** - Tracking lokasi exact spare part
+### Warehouse Organization
+- **Racks Management** - Kelola rak penyimpanan
+- **Rows & Bins Configuration** - Setup baris dan bin per rack
+- **Location Tracking** - Tracking lokasi exact spare part
 
-### 💱 Transaction Management
-- 📥 **Incoming Transactions (IN)** - Catat barang masuk ke warehouse
-- 📤 **Outgoing Transactions (OUT)** - Catat barang keluar dari warehouse
-- 📋 **Transaction Logs** - Audit trail lengkap semua transaksi
-- 👤 **User Attribution** - Track siapa yang melakukan transaksi
+### Transaction Management
+- **Incoming Transactions (IN)** - Catat barang masuk ke warehouse
+- **Outgoing Transactions (OUT)** - Catat barang keluar dari warehouse
+- **Transaction Logs** - Audit trail lengkap semua transaksi
+- **User Attribution** - Track siapa yang melakukan transaksi
 
-### 📊 Inventory & Reporting
-- 📈 **Real-time Inventory Tracking** - Monitoring stok real-time
-- 📉 **Capacity Monitoring** - Track kapasitas bin dan rack
-- 📑 **Transaction History** - Laporan lengkap semua transaksi
-- 🕐 **Activity Timeline** - Timeline lengkap aktivitas warehouse
+### Inventory & Reporting
+- **Real-time Inventory Tracking** - Monitoring stok real-time
+- **Capacity Monitoring** - Track kapasitas bin dan rack
+- **Transaction History** - Laporan lengkap semua transaksi
+- **Activity Timeline** - Timeline lengkap aktivitas warehouse
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 <div align="center">
 
@@ -112,18 +111,67 @@ Project ini dikembangkan untuk mengatasi kebutuhan warehouse management yang leb
 <tr>
 <td width="50%">
 
-### 🎨 Frontend
+### Frontend
 - **Windows Forms (WinForms)** - Desktop UI framework
 - **Custom Controls** - UI components
 - **Data Binding** - Real-time data updates
 
+#### UI Wireframes
+
+##### Login Form
+Autentikasi pengguna dan validasi kredensial
+- Input username dan password
+- Validasi user terhadap database
+- Routing otomatis berdasarkan role (Supervisor / Operator)
+
+![Login Form](wireframe/loginForm.png)
+
+##### Operator Main Dashboard
+Interface untuk operator melakukan transaksi inventory masuk dan keluar
+
+![Operator Main Form](wireframe/operatorMainForm.png)
+
+**Fitur Inbound:** Scan/input part number, pilih lokasi, input quantity, validasi kapasitas
+
+**Fitur Outbound:** Scan/input part number, verifikasi stok, input quantity keluaran
+
+##### Supervisor Dashboard
+Dashboard komprehensif untuk monitoring dan manajemen master data
+
+![Supervisor Main Form](wireframe/supervisorMainForm.png)
+
+**Fitur:**
+- Master data management spare parts
+- Weekly transaction analytics
+- Real-time activity log
+- Rack utilization monitoring
+
 </td>
 <td width="50%">
 
-### 🔌 Backend & Database
+### Backend & Database
 - **LINQ to SQL** - Object-relational mapping
 - **SQL Server** - Enterprise database
 - **Stored Procedures** - Complex data operations
+
+#### Database Schema
+
+![Database Diagram](wireframe/databaseDiagram.png)
+
+**Entity Relationships:**
+- Categories → Racks, SpareParts (1:N)
+- Racks → RackRows (1:N)
+- RackRows → RackBins (1:N)
+- Users → InventoryLogs (1:N)
+- SpareParts → Users (CreatedBy, ModifiedBy, DeletedBy)
+
+**Key Tables:**
+- **Users** - Authentication & role management
+- **Categories** - Spare part categorization
+- **Racks** - Warehouse rack organization
+- **RackRows/RackBins** - Physical location mapping
+- **SpareParts** - Inventory master data
+- **InventoryLogs** - Transaction audit trail
 
 </td>
 </tr>
@@ -131,7 +179,7 @@ Project ini dikembangkan untuk mengatasi kebutuhan warehouse management yang leb
 
 ---
 
-## 📦 Prasyarat
+## Prasyarat
 
 Sebelum memulai, pastikan Anda telah menginstall:
 
@@ -152,7 +200,7 @@ Sebelum memulai, pastikan Anda telah menginstall:
 
 ---
 
-## 🔧 Instalasi
+## Instalasi
 
 ### 1. Clone Repository
 
@@ -244,7 +292,7 @@ Data Source=192.168.1.100,1433;Initial Catalog=SpareWMS;User ID=sa;Password=Your
 
 ---
 
-## 🚀 Cara Menjalankan
+## Cara Menjalankan
 
 ### 1. Build Solution
 
@@ -751,3 +799,5 @@ Operator:
 ⭐ **If this project helps you, please give it a star!** ⭐
 
 </div>
+
+
