@@ -1,4 +1,4 @@
-# 📦 SpareWMS (Spare Part Warehouse Management System)
+# � SpareWMS (Spare Part Warehouse Management System)
 
 <div align="center">
 
@@ -107,47 +107,10 @@ Project ini dikembangkan untuk mengatasi kebutuhan warehouse management yang leb
 
 ---
 
-<table>
-<tr>
-<td width="50%">
-
 ### Frontend
 - **Windows Forms (WinForms)** - Desktop UI framework
 - **Custom Controls** - UI components
 - **Data Binding** - Real-time data updates
-
-#### UI Wireframes
-
-##### Login Form
-Autentikasi pengguna dan validasi kredensial
-- Input username dan password
-- Validasi user terhadap database
-- Routing otomatis berdasarkan role (Supervisor / Operator)
-
-![Login Form](wireframe/loginForm.png)
-
-##### Operator Main Dashboard
-Interface untuk operator melakukan transaksi inventory masuk dan keluar
-
-![Operator Main Form](wireframe/operatorMainForm.png)
-
-**Fitur Inbound:** Scan/input part number, pilih lokasi, input quantity, validasi kapasitas
-
-**Fitur Outbound:** Scan/input part number, verifikasi stok, input quantity keluaran
-
-##### Supervisor Dashboard
-Dashboard komprehensif untuk monitoring dan manajemen master data
-
-![Supervisor Main Form](wireframe/supervisorMainForm.png)
-
-**Fitur:**
-- Master data management spare parts
-- Weekly transaction analytics
-- Real-time activity log
-- Rack utilization monitoring
-
-</td>
-<td width="50%">
 
 ### Backend & Database
 - **LINQ to SQL** - Object-relational mapping
@@ -172,10 +135,6 @@ Dashboard komprehensif untuk monitoring dan manajemen master data
 - **RackRows/RackBins** - Physical location mapping
 - **SpareParts** - Inventory master data
 - **InventoryLogs** - Transaction audit trail
-
-</td>
-</tr>
-</table>
 
 ---
 
@@ -226,7 +185,7 @@ Update-Package -Reinstall
 
 ---
 
-## ⚙️ Konfigurasi Database
+## Konfigurasi Database
 
 ### 1. Setup Database Connection
 
@@ -285,9 +244,9 @@ Data Source=192.168.1.100,1433;Initial Catalog=SpareWMS;User ID=sa;Password=Your
 
 ```sql
 -- Script akan:
--- ✅ Membuat database 'SpareWMS' jika belum ada
--- ✅ Membuat semua table dan relationships
--- ✅ Insert seed data sampel
+--  Membuat database 'SpareWMS' jika belum ada
+--  Membuat semua table dan relationships
+--  Insert seed data sampel
 ```
 
 ---
@@ -326,7 +285,7 @@ Gunakan akun sample berikut (dari seed data):
 
 ---
 
-## 📁 Struktur Project
+## Struktur Project
 
 ```
 SpareWMS/
@@ -385,7 +344,7 @@ SpareWMS/
 
 ---
 
-## 📚 Dokumentasi Database
+## Dokumentasi Database
 
 ### Database Schema Overview
 
@@ -460,115 +419,26 @@ SpareWMS Database
 - `SpareParts` → `Users` (CreatedBy, ModifiedBy, DeletedBy)
 - `RackBins` → `SpareParts` (1:1 optional)
 
----
+#### UI Wireframes
 
-## � UI Wireframes & User Interface
-
-### 🔐 Login Form
-
-**Fungsi:** Autentikasi pengguna dan validasi kredensial
-- Input username dan password
-- Validasi user terhadap database
-- Routing otomatis berdasarkan role (Supervisor / Operator)
+##### Login Form
+Autentikasi pengguna dan validasi kredensial
 
 ![Login Form](wireframe/loginForm.png)
 
-**Fitur:**
-- Username dan password validation
-- Secure authentication
-- Role-based redirection
-
----
-
-### 📊 Operator Main Dashboard
-
-**Fungsi:** Interface untuk operator melakukan transaksi inventory masuk dan keluar
-- Menampilkan form Inventory Inbound (barang masuk)
-- Menampilkan form Inventory Outbound (barang keluar)
-- Input data transaksi dengan validasi otomatis
-- Tracking lokasi spare part di Rack/Bin
-
-**Akses Role:** 
-- 👨‍💼 Operator
+##### Operator Main Dashboard
+Interface untuk operator melakukan transaksi inventory masuk dan keluar
 
 ![Operator Main Form](wireframe/operatorMainForm.png)
 
-**Fitur yang Tersedia:**
-
-#### 📥 Inventory Inbound (Barang Masuk)
-- Scan atau input Part Number
-- Pilih lokasi penyimpanan (Rack/Bin)
-- Input jumlah quantity
-- Validasi kapasitas bin otomatis
-- Catat waktu transaksi
-- Identifikasi operator yang melakukan transaksi
-
-#### 📤 Inventory Outbound (Barang Keluar)
-- Scan atau input Part Number
-- Lihat stok tersedia (FIFO Source Rack)
-- Verifikasi stok sebelum transaksi
-- Input quantity yang akan dikeluarkan
-- Catat waktu dan operator transaksi
-
----
-
-### 👨‍⚙️ Supervisor Dashboard
-
-**Fungsi:** Dashboard komprehensif untuk monitoring dan manajemen master data
-- Master data management spare parts
-- Analytics dan reporting
-- Monitoring aktivitas warehouse
-- Utilization tracking
-
-**Akses Role:** 
-- 👨‍⚙️ Supervisor
+##### Supervisor Dashboard
+Dashboard komprehensif untuk monitoring dan manajemen master data
 
 ![Supervisor Main Form](wireframe/supervisorMainForm.png)
 
-**Fitur yang Tersedia:**
-
-#### 📋 Master Data Sparepart (Kiri)
-- **Search & Filter** - Cari spare parts berdasarkan kriteria
-- **CRUD Operations** - Create, Read, Update, Delete spare parts
-- **Data Management** - Kelola:
-  - Part Number (UNIQUE)
-  - Part Name
-  - Category (Finished Goods / Raw Materials)
-  - Max Capacity per Rack
-- **Detail View** - Lihat detail spare part yang dipilih
-- **Bulk Operations** - Insert, Update, Delete dalam batch
-
-#### 📈 Weekly Stock Transaction Summary (Atas Kanan)
-- **Grafik Transaksi Mingguan** - Visualisasi IN/OUT transaksi
-- **Time Series Data** - Tracking 7 hari terakhir
-- **Color Legend** - 
-  - 🟩 Inbound (Green) - Barang masuk
-  - 🟥 Outbound (Red) - Barang keluar
-
-#### 📝 Activity Log (Tengah Kanan)
-- **Real-time Transaksi Log** - Daftar semua aktivitas warehouse
-- **Informasi Tertrack:**
-  - Waktu transaksi (Timestamp)
-  - Spare part yang ditransaksikan
-  - Tipe transaksi (IN/OUT)
-  - Jumlah quantity
-  - Operator yang melakukan transaksi
-- **Sortable & Filterable** - Filter berdasarkan tipe, tanggal, operator
-
-#### 📦 Rack Utilization Summary (Bawah Kanan)
-- **Monitoring Kapasitas Rack** - Track penggunaan rack
-- **Metrik yang Ditampilkan:**
-  - Rack Code - Identifikasi rak
-  - Category - Kategori barang di rack
-  - Total Bins - Jumlah bin per rack
-  - Used - Bin yang sudah terisi
-  - Empty - Bin yang masih kosong
-  - Utilization % - Persentase penggunaan kapasitas
-- **Insights** - Identifikasi bottleneck dan optimize space
-
 ---
 
-## �🎯 Workflow Aplikasi
+## Workflow Aplikasi
 
 ### Login Flow
 ```
@@ -634,7 +504,7 @@ Success
 
 ---
 
-## ⚙️ Development Guide
+## Development Guide
 
 ### Building dari Command Line
 
@@ -653,7 +523,7 @@ msbuild SpareWMS.sln /p:Configuration=Release
 
 **Error: "Cannot connect to database"**
 ```
-✅ Solution:
+ Solution:
 1. Buka SSMS
 2. Verify koneksi ke SQL Server
 3. Check App.config connection string
@@ -662,7 +532,7 @@ msbuild SpareWMS.sln /p:Configuration=Release
 
 **Error: "Database does not exist"**
 ```
-✅ Solution:
+ Solution:
 1. Buka SSMS
 2. Jalankan DbSpareWMS.sql script
 3. Verify database dibuat successfully
@@ -670,7 +540,7 @@ msbuild SpareWMS.sln /p:Configuration=Release
 
 ---
 
-## 📋 Sample Data
+## � Sample Data
 
 Database sudah include sample data:
 
@@ -697,55 +567,53 @@ Operator:
 
 ---
 
-## 🐛 Known Issues & Limitations
+## Known Issues & Limitations
 
 | Issue | Status | Workaround |
 |-------|--------|-----------|
-| Report generation | ⏳ In Progress | Manual export to Excel |
-| Real-time sync | 🚧 Planned | Refresh manual |
-| Multi-user concurrent access | ⚠️ Limited | Implement row-level locking |
-| Mobile access | 🚫 Not Available | Use on desktop only |
+| Report generation |  In Progress | Manual export to Excel |
+| Real-time sync |  Planned | Refresh manual |
+| Multi-user concurrent access |  Limited | Implement row-level locking |
+| Mobile access |  Not Available | Use on desktop only |
 
 ---
 
-## 🚀 Future Enhancements
-
-- [ ] 📊 Advanced reporting dengan charts
-- [ ] 📧 Email notifications
-- [ ] 📱 Mobile app companion
-- [ ] 🔔 Real-time alerts
-- [ ] 🌐 Web interface
-- [ ] 📊 Analytics dashboard
-- [ ] 🔄 Multi-location support
-- [ ] 📦 Barcode scanning integration
+## Future Enhancements`n`n- [ ] � Advanced reporting dengan charts
+- [ ] � Email notifications
+- [ ] � Mobile app companion
+- [ ] � Real-time alerts
+- [ ]  Web interface
+- [ ] � Analytics dashboard
+- [ ] � Multi-location support
+- [ ] � Barcode scanning integration
 
 ---
 
-## 📝 Changelog
+## Changelog
 
 <details>
-<summary><b>Version 1.0.0 (2026) - Current Release 🎉</b></summary>
+<summary><b>Version 1.0.0 (2026) - Current Release </b></summary>
 
-### ✅ Features Implemented
-- ✅ User authentication dengan role-based access
-- ✅ CRUD Spare Parts management
-- ✅ Warehouse structure setup (Racks, Rows, Bins)
-- ✅ Inventory transaction management (IN/OUT)
-- ✅ Transaction logs dan audit trail
-- ✅ Real-time inventory tracking
-- ✅ User & role management
+###  Features Implemented
+-  User authentication dengan role-based access
+-  CRUD Spare Parts management
+-  Warehouse structure setup (Racks, Rows, Bins)
+-  Inventory transaction management (IN/OUT)
+-  Transaction logs dan audit trail
+-  Real-time inventory tracking
+-  User & role management
 
-### 🔧 Technical Implementation
-- ✅ Windows Forms desktop application
-- ✅ LINQ to SQL data access layer
-- ✅ SQL Server database integration
-- ✅ .NET Framework 4.8 compatibility
+### � Technical Implementation
+-  Windows Forms desktop application
+-  LINQ to SQL data access layer
+-  SQL Server database integration
+-  .NET Framework 4.8 compatibility
 
 </details>
 
 ---
 
-## 📄 Lisensi
+## Lisensi
 
 <div align="center">
 
@@ -757,11 +625,11 @@ Operator:
 
 ---
 
-## 👤 Kontak
+## Kontak
 
 <div align="center">
 
-### 💬 Let's Connect!
+### � Let's Connect!
 
 **Abby Dahlan Havizh**
 
@@ -771,33 +639,39 @@ Operator:
 
 ---
 
-### 💖 Support This Project
+### � Support This Project
 
 <table>
 <tr>
 <td align="center">
-⭐ Star this repo
+ Star this repo
 </td>
 <td align="center">
-🔄 Share with others
+� Share with others
 </td>
 <td align="center">
-🐛 Report issues
+� Report issues
 </td>
 <td align="center">
-💡 Suggest features
+� Suggest features
 </td>
 </tr>
 </table>
 
 ---
 
-<img src="https://img.icons8.com/fluency/48/000000/code.png"/> **Made with ❤️ by Abby Dahlan Havizh** <img src="https://img.icons8.com/fluency/48/000000/code.png"/>
+<img src="https://img.icons8.com/fluency/48/000000/code.png"/> **Made with ❤ by Abby Dahlan Havizh** <img src="https://img.icons8.com/fluency/48/000000/code.png"/>
 
 *Building digital solutions for warehouse management excellence*
 
-⭐ **If this project helps you, please give it a star!** ⭐
+ **If this project helps you, please give it a star!** 
 
 </div>
+
+
+
+
+
+
 
 
