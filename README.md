@@ -1,4 +1,4 @@
-# � SpareWMS (Spare Part Warehouse Management System)
+# 📦 SpareWMS (Spare Part Warehouse Management System)
 
 <div align="center">
 
@@ -135,6 +135,25 @@ Project ini dikembangkan untuk mengatasi kebutuhan warehouse management yang leb
 - **RackRows/RackBins** - Physical location mapping
 - **SpareParts** - Inventory master data
 - **InventoryLogs** - Transaction audit trail
+
+---
+
+## UI Wireframes
+
+### Login Form
+Autentikasi pengguna dan validasi kredensial
+
+![Login Form](wireframe/loginForm.png)
+
+### Operator Main Dashboard
+Interface untuk operator melakukan transaksi inventory masuk dan keluar
+
+![Operator Main Form](wireframe/operatorMainForm.png)
+
+### Supervisor Dashboard
+Dashboard komprehensif untuk monitoring dan manajemen master data
+
+![Supervisor Main Form](wireframe/supervisorMainForm.png)
 
 ---
 
@@ -418,23 +437,6 @@ SpareWMS Database
 **Many-to-One Relationships:**
 - `SpareParts` → `Users` (CreatedBy, ModifiedBy, DeletedBy)
 - `RackBins` → `SpareParts` (1:1 optional)
-
-#### UI Wireframes
-
-##### Login Form
-Autentikasi pengguna dan validasi kredensial
-
-![Login Form](wireframe/loginForm.png)
-
-##### Operator Main Dashboard
-Interface untuk operator melakukan transaksi inventory masuk dan keluar
-
-![Operator Main Form](wireframe/operatorMainForm.png)
-
-##### Supervisor Dashboard
-Dashboard komprehensif untuk monitoring dan manajemen master data
-
-![Supervisor Main Form](wireframe/supervisorMainForm.png)
 
 ---
 
