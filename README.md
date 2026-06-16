@@ -542,7 +542,7 @@ msbuild SpareWMS.sln /p:Configuration=Release
 
 ---
 
-## � Sample Data
+## Sample Data
 
 Database sudah include sample data:
 
@@ -580,23 +580,12 @@ Operator:
 
 ---
 
-## Future Enhancements`n`n- [ ] � Advanced reporting dengan charts
-- [ ] � Email notifications
-- [ ] � Mobile app companion
-- [ ] � Real-time alerts
-- [ ]  Web interface
-- [ ] � Analytics dashboard
-- [ ] � Multi-location support
-- [ ] � Barcode scanning integration
-
----
-
 ## Changelog
 
 <details>
 <summary><b>Version 1.0.0 (2026) - Current Release </b></summary>
 
-###  Features Implemented
+### Features Implemented
 -  User authentication dengan role-based access
 -  CRUD Spare Parts management
 -  Warehouse structure setup (Racks, Rows, Bins)
@@ -605,7 +594,7 @@ Operator:
 -  Real-time inventory tracking
 -  User & role management
 
-### � Technical Implementation
+### Technical Implementation
 -  Windows Forms desktop application
 -  LINQ to SQL data access layer
 -  SQL Server database integration
@@ -613,17 +602,6 @@ Operator:
 
 </details>
 
----
-
-## Lisensi
-
-<div align="center">
-
-**Internal Project - All Rights Reserved**
-
-*© 2026 SpareWMS. Developed for internal warehouse management purposes.*
-
-</div>
 
 ---
 
@@ -631,7 +609,7 @@ Operator:
 
 <div align="center">
 
-### � Let's Connect!
+### Let's Connect!
 
 **Abby Dahlan Havizh**
 
@@ -641,7 +619,7 @@ Operator:
 
 ---
 
-### � Support This Project
+### Support This Project
 
 <table>
 <tr>
@@ -649,13 +627,13 @@ Operator:
  Star this repo
 </td>
 <td align="center">
-� Share with others
+ Share with others
 </td>
 <td align="center">
-� Report issues
+ Report issues
 </td>
 <td align="center">
-� Suggest features
+ Suggest features
 </td>
 </tr>
 </table>
